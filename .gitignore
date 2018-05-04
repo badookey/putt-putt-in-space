@@ -1,0 +1,10 @@
+------------ start copy -------------
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
+Build/
+------------ end copy ---------------
