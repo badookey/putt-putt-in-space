@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4342803231314436}
   - component: {fileID: 50264343754098326}
-  - component: {fileID: 58120673340830556}
+  - component: {fileID: 58195100366760032}
   - component: {fileID: 212053491513961880}
   - component: {fileID: 114985995645926630}
   m_Layer: 0
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58120673340830556
+--- !u!58 &58195100366760032
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -72,12 +72,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.12
+  m_Radius: 1
 --- !u!114 &114985995645926630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newPosition: {x: 0, y: 0}
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!212 &212053491513961880
 SpriteRenderer:
   m_ObjectHideFlags: 1
