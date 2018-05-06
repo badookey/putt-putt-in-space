@@ -26,4 +26,10 @@ public class MagnetAction : MonoBehaviour {
             trans.position = newPosition;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "Metal") {
+            Destroy(collision.gameObject);
+        }
+    }
 }
