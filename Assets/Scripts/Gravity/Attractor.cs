@@ -4,27 +4,54 @@ using UnityEngine;
 
 public class Attractor : MonoBehaviour {
 
-    const float G = 667.408f;  // gravitational constant = 6.67408 × 10-11 m3 kg-1 s-2
+    
 
     // Public variables
     public Rigidbody2D rb;
     public static List<Attractor> Attractors;
+    public static List<Attractor> AllAttractors;
+    public bool shouldAttract = false;
+    public float G = 667.408f;  // gravitational constant = 6.67408 × 10-11 m3 kg-1 s-2
 
 
     private void OnEnable() {
         if (Attractors == null) {
             Attractors = new List<Attractor>();
         }
-        Attractors.Add(this);
+        if (AllAttractors == null)
+        {
+            AllAttractors = new List<Attractor>();
+        }
+        //Attractors.Add(this);
+        AllAttractors.Add(this);
     }
 
     private void OnDisable() {
         Attractors.Remove(this);
     }
+    private void OnMouseDown()
+    {
+            if (Attractors.Contains(this))
+            {
+                Attractors.Remove(this);
+                this.shouldAttract = false;
+            }
+            else
+            {
+                Attractors.Add(this);
+                this.shouldAttract = true;
+            }
 
+    }
+
+    public void Update()
+    {
+        
+        
+    }
     private void FixedUpdate() {
         foreach (Attractor attractor in Attractors) {
-            if (attractor != this) {
+            if (attractor != this && attractor.shouldAttract == true) {
                 Attract(attractor);
             }
         }
