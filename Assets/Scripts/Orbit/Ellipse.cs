@@ -19,4 +19,25 @@ public class Ellipse {
         float y = Mathf.Cos(angle) * yAxis;
         return new Vector2(x, y);
     }
+
+
+    // 返回顺时针位置百分比
+    public float antiEvaluate(float x, float y) {
+        float xAngle = Mathf.Asin((x / xAxis)) * Mathf.Rad2Deg;
+        float yAngle = Mathf.Acos((y / yAxis)) * Mathf.Rad2Deg;
+
+        if (xAngle > 0) {
+            if (yAngle < 90) {  // 第一象限
+                return yAngle / 360f;
+            } else {  // 第二象限
+                return yAngle / 360f;
+            }
+        } else {
+            if (yAngle < 90) {  // 第四象限
+                return 1f - yAngle / 360f;
+            } else {  // 第三象限
+                return 1f - yAngle / 360f;
+            }
+        }
+    }
 }
