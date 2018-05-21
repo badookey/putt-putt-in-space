@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,6 +39,7 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.8
+      value: -10.97
       objectReference: {fileID: 0}
     - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.7
+      value: -7.29
       objectReference: {fileID: 0}
     - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -155,6 +155,20 @@ Prefab:
     - target: {fileID: 1556948694749710, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
       propertyPath: m_Name
       value: Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212373007145540532, guid: 892cc282e69538e45bf591cc68dc38c2,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0aab17f474ae0434eb7aff4a29cc0123,
+        type: 3}
+    - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
@@ -202,6 +216,10 @@ Prefab:
       propertyPath: m_Name
       value: Planet (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1556948694749710, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
   m_IsPrefabParent: 0
@@ -243,6 +261,30 @@ Prefab:
     - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212373007145540532, guid: 892cc282e69538e45bf591cc68dc38c2,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1633d80f997845418c21db664ba138f,
+        type: 3}
+    - target: {fileID: 50639437425913072, guid: 892cc282e69538e45bf591cc68dc38c2,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 50639437425913072, guid: 892cc282e69538e45bf591cc68dc38c2,
+        type: 2}
+      propertyPath: m_Mass
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285253830540946, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
@@ -299,7 +341,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 14.2493725
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -370,6 +412,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21afd562822d08d44a506eb4a9c1291f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1474152338 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1556948694749710, guid: 892cc282e69538e45bf591cc68dc38c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 230443421}
+--- !u!114 &1474152339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474152338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f036ad76c5a5c4b9bf925e471821ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
+  speed: 15
 --- !u!1001 &2015704930
 Prefab:
   m_ObjectHideFlags: 0
@@ -412,6 +472,10 @@ Prefab:
     - target: {fileID: 1556948694749710, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
       propertyPath: m_Name
       value: Planet (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556948694749710, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 892cc282e69538e45bf591cc68dc38c2, type: 2}
