@@ -31,16 +31,6 @@ public class EllipseCollider2D : MonoBehaviour {
         for (int i = 0; i <= smoothness; i++)
         {
             float a = ang * Mathf.Deg2Rad;
-
-            // fan shuriken
-            //float radius;
-            //float radX = 90 - (Mathf.Abs(ang) % 90);
-            //float radY = 90 - radX;
-            //radius = ((radiusX * radX / 90f) + (radiusY * radY / 90f)) / 2f;
-            //float x = center.x + radius * Mathf.Cos(a);
-            //float y = center.y + radius * Mathf.Sin(a);
-
-            // https://www.uwgb.edu/dutchs/Geometry/HTMLCanvas/ObliqueEllipses5a.HTM
             float x = center.x + radiusX * Mathf.Cos(a) * Mathf.Cos(o) - radiusY * Mathf.Sin(a) * Mathf.Sin(o);
             float y = center.y - radiusX * Mathf.Cos(a) * Mathf.Sin(o) - radiusY * Mathf.Sin(a) * Mathf.Cos(o);
 

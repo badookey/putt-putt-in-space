@@ -13,7 +13,7 @@ public class Ellipse {
         this.yAxis = yAxis;
     }
 
-    public Vector2 evaluate(float t) {
+    public Vector2 Evaluate(float t) {
         float angle = Mathf.Deg2Rad * 360f * t;
         float x = Mathf.Sin(angle) * xAxis;
         float y = Mathf.Cos(angle) * yAxis;
@@ -21,21 +21,21 @@ public class Ellipse {
     }
 
 
-    // 返回顺时针位置百分比
-    public float antiEvaluate(float x, float y) {
+    // calculate the progress of the point on ellipse(clockwise) 
+    public float AntiEvaluate(float x, float y) {
         float xAngle = Mathf.Asin((x / xAxis)) * Mathf.Rad2Deg;
         float yAngle = Mathf.Acos((y / yAxis)) * Mathf.Rad2Deg;
 
         if (xAngle > 0) {
-            if (yAngle < 90) {  // 第一象限
+            if (yAngle < 90) {  // 1st quadrant
                 return yAngle / 360f;
-            } else {  // 第二象限
+            } else {  // 2nd quadrant
                 return yAngle / 360f;
             }
         } else {
-            if (yAngle < 90) {  // 第四象限
+            if (yAngle < 90) {  // 3rd quadrant
                 return 1f - yAngle / 360f;
-            } else {  // 第三象限
+            } else {  // 4th quadrant
                 return 1f - yAngle / 360f;
             }
         }
