@@ -6,6 +6,7 @@ public class OrbitMotionController : MonoBehaviour {
 
     public Transform orbitObject;
     public Rigidbody2D orbitObjectRb;
+    public Attractor orbitObjectAt;
 
     [Range(0f, 1f)]
     public float orbitProgress;
@@ -17,12 +18,10 @@ public class OrbitMotionController : MonoBehaviour {
     public bool isExiting, isEntering = false;
 
     CircleCollider2D cc;
-    Attractor attractor;
     Vector2 center;
 
     void Start() {
         cc = GetComponent<CircleCollider2D>();
-        attractor = GetComponent<Attractor>();
         center = transform.position;
     }
 
@@ -38,7 +37,7 @@ public class OrbitMotionController : MonoBehaviour {
                 orbitObjectRb.velocity = GetExitVelocity();
             }
 
-            Reset();
+            //Reset();
         }
 
     }
@@ -62,16 +61,18 @@ public class OrbitMotionController : MonoBehaviour {
 
         if (isExiting)
             return;
-
-        attractor.enabled = false;
+        
+        
         isEntering = true;
         orbitObject = other.transform;
         orbitObjectRb = orbitObject.GetComponent<Rigidbody2D>();
+        orbitObjectAt = orbitObject.GetComponent<Attractor>();
+        orbitObjectAt.enabled = false;
 
         Vector2 enterV = orbitObjectRb.velocity;
         orbitDirection = GetOrbitDirection();  // compute direction
-
-        //orbitObjectRb.bodyType = RigidbodyType2D.Static;
+        
+        // disable rb temperately
         orbitObjectRb.Sleep();
         orbitProgress = (orbitDirection * GetAngle(orbitObject.position)) % 360f / 360f;
 
@@ -82,13 +83,15 @@ public class OrbitMotionController : MonoBehaviour {
         if (other.tag != "Player")
             return;
 
-        attractor.enabled = true;
+        orbitObjectAt.enabled = true;
         isExiting = false;
+        Reset();
     }
 
     void Reset() {
         orbitObject = null;
         orbitObjectRb = null;
+        orbitObjectAt = null;
         orbitProgress = 0f;
     }
 
@@ -103,8 +106,8 @@ public class OrbitMotionController : MonoBehaviour {
     IEnumerator AnimateApproach(Vector2 pos) {
         // start approaching
         bool isApproaching = true;
-        float smoothSpeed = 1f;
-        float limitation = 0.1f;
+        float smoothSpeed = 5f;
+        float limitation = 0.01f;
 
         while (isApproaching) {
             orbitObject.position = Vector2.Lerp(orbitObject.position, pos, Time.deltaTime * smoothSpeed);

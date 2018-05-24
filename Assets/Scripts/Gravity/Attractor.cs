@@ -27,7 +27,6 @@ public class Attractor : MonoBehaviour {
                 Attract(attractor);
             }
         }
-
     }
 
     void Attract(Attractor objToAttract) {
