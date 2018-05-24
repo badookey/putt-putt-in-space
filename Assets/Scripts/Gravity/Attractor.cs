@@ -7,6 +7,7 @@ public class Attractor : MonoBehaviour {
     const float G = 667.408f;  // gravitational constant = 6.67408 × 10-11 m3 kg-1 s-2
 
     // Public variables
+    public float mass = 1;
     public Rigidbody2D rb;
     public static List<Attractor> Attractors;
 
@@ -33,6 +34,7 @@ public class Attractor : MonoBehaviour {
 
     void Attract(Attractor objToAttract) {
         Rigidbody2D rbToAttact = objToAttract.rb;
+        Rigidbody2D massToAttact = objToAttract.GetComponent<Rigidbody2D>();
 
         Vector2 direction = rb.position - rbToAttact.position;
         float distance = direction.magnitude;
@@ -41,7 +43,7 @@ public class Attractor : MonoBehaviour {
             return;
         }
 
-        float forceMagnitue = G * (rb.mass * rbToAttact.mass) / Mathf.Pow(distance, 2);
+        float forceMagnitue = G * (mass * massToAttact.mass) / Mathf.Pow(distance, 2);
         Vector2 force = direction.normalized * forceMagnitue;
 
         rbToAttact.AddForce(force);
