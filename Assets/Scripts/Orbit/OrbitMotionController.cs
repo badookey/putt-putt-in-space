@@ -15,7 +15,7 @@ public class OrbitMotionController : MonoBehaviour {
 
     int orbitDirection;  // +1 clockwise -1 counter-clockwise
     bool orbitActive;
-    public bool isExiting, isEntering = false;
+    public bool isEntering = false;
 
     CircleCollider2D cc;
     Vector2 center;
@@ -29,15 +29,11 @@ public class OrbitMotionController : MonoBehaviour {
 
         if (orbitActive && !isEntering && Input.GetKeyDown(KeyCode.Space)) {
             orbitActive = false;  // stop orbiting
-            isExiting = true;
 
             if (orbitObject != null && orbitObjectRb != null) {
-                //orbitObjectRb.bodyType = RigidbodyType2D.Dynamic;
                 orbitObjectRb.WakeUp();
                 orbitObjectRb.velocity = GetExitVelocity();
             }
-
-            //Reset();
         }
 
     }
@@ -58,10 +54,6 @@ public class OrbitMotionController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag != "Player")
             return;
-
-        if (isExiting)
-            return;
-        
         
         isEntering = true;
         orbitObject = other.transform;
@@ -82,9 +74,8 @@ public class OrbitMotionController : MonoBehaviour {
     void OnTriggerExit2D(Collider2D other) {
         if (other.tag != "Player")
             return;
-
+        
         orbitObjectAt.enabled = true;
-        isExiting = false;
         Reset();
     }
 
@@ -122,6 +113,7 @@ public class OrbitMotionController : MonoBehaviour {
         // finish entering
         orbitActive = true;
         isEntering = false;
+
         // start orbiting
         StartCoroutine(AnimateOrbit());
     }
@@ -167,10 +159,6 @@ public class OrbitMotionController : MonoBehaviour {
     }
 
     int GetOrbitDirection() {
-
-        float ang = Vector2.Angle(Vector2.up, orbitObjectRb.velocity);
-        float xMagnitude = Mathf.Sin(ang) * orbitObjectRb.velocity.magnitude;
-        float yMagnitude = Mathf.Sin(ang) * orbitObjectRb.velocity.magnitude;
 
         float entryAngle = GetAngle(orbitObjectRb.velocity);
         if (orbitObject.position.y > center.y) {  // 1,4 quadrant

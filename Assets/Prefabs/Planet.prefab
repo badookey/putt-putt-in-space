@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212815631997022586}
   - component: {fileID: 58956200125353122}
   - component: {fileID: 50723652406809176}
-  - component: {fileID: 114110482741369098}
   - component: {fileID: 114708804148664814}
+  - component: {fileID: 114599979081574454}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1131234417385010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.75, y: -5.86, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
---- !u!114 &114110482741369098
+--- !u!114 &114599979081574454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,13 +87,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1131234417385010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35eddd1189297d44d9822de091ca1a16, type: 3}
+  m_Script: {fileID: 11500000, guid: f6c2e9021bf3c6b45ae7093c31b11488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   orbitObject: {fileID: 0}
   orbitObjectRb: {fileID: 0}
+  orbitObjectAt: {fileID: 0}
   orbitProgress: 0
-  orbitPeriod: 3
+  orbitPeriod: 5
   isExiting: 0
   isEntering: 0
 --- !u!114 &114708804148664814
