@@ -5,13 +5,11 @@ using UnityEngine;
 public class Attractor : MonoBehaviour {
 
     const float G = 667.408f;  // gravitational constant = 6.67408 × 10-11 m3 kg-1 s-2
-
-    // Public variables
+    
     public float mass = 1;
     public Rigidbody2D rb;
     public static List<Attractor> Attractors;
-
-
+    
     private void OnEnable() {
         if (Attractors == null) {
             Attractors = new List<Attractor>();
