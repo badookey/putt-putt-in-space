@@ -12,12 +12,12 @@ public class Bounce : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         Vector3 pos = col.gameObject.transform.position;
-        if(Math.Abs(pos.y)>10)
+        if(Math.Abs(pos.y)>15)
         {
             Vector2 vector = rigidBody.velocity;
             rigidBody.velocity = new Vector2(vector.x, -vector.y);
         }
-        if (Math.Abs(pos.x) > 17)
+        if (Math.Abs(pos.x) > 20)
         {
             Vector2 vector = rigidBody.velocity;
             rigidBody.velocity = new Vector2(-vector.x, vector.y);
