@@ -27,10 +27,9 @@ public class SpinScript : MonoBehaviour {
         angle = CalculateRotateAngle(transform);
     }
 
+    // cacluate angle in clockwise
     public static float CalculateRotateAngle(Transform trans) {
-        int sign = trans.rotation.y > 0 ? 1 : -1;
-        float ang = sign * Quaternion.Angle(Quaternion.identity, trans.rotation);
-        return (ang + 360f) % 360f;
+        return 360f - trans.rotation.eulerAngles.z;
     }
 }
 
