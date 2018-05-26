@@ -8,17 +8,20 @@ public class AccumulationMovement : MonoBehaviour {
     public float dragThreshold = 500f;  // max activity area
     public bool forward = false;  // move along with drag direction
 
+    [ReadOnly]
     public bool isDragging = false;
+    [ReadOnly]
     public bool isValidDragging = false;
-
-    public Vector2 dragDelta;
+    [ReadOnly]
     public float accumulation = 0f;
 
     Rigidbody2D rb;
+    Vector2 dragDelta;
     Vector2 startTouch;
 
     void Start() {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
+        //Physics2D.IgnoreLayerCollision(9, 10);
     }
 
     void Update() {
@@ -49,6 +52,7 @@ public class AccumulationMovement : MonoBehaviour {
             // DO SOMETHING INDICATING PLAYER
         }
     }    
+
     void Reset() {
         startTouch = dragDelta = Vector2.zero;
         isDragging = isValidDragging = false;
