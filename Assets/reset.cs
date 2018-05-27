@@ -15,7 +15,7 @@ public class reset : MonoBehaviour {
        
         gameOverText.gameObject.SetActive(true);
         Time.timeScale = 0.00001f;
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(2);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
