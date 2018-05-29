@@ -6,10 +6,16 @@ TagManager:
   tags:
   - Magnet
   - Metal
+<<<<<<< HEAD
   - Planet
   - Portal
   - Planet_Orbit_Ring
   - Planet_Surface
+=======
+  - Portal
+  - Planet
+  - rock
+>>>>>>> play
   layers:
   - Default
   - TransparentFX
