@@ -84,11 +84,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1052959109191132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 314ad7191f2a23243a9eec540457f1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mass: 1
   rb: {fileID: 50047788819326704}
 --- !u!212 &212138422203279894
 SpriteRenderer:
@@ -103,6 +104,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
