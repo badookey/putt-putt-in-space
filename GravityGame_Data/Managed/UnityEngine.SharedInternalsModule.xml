@@ -4,10 +4,5 @@
     <assembly>
       <name>UnityEngine.SharedInternalsModule</name>
     </assembly>
-    <member name="A:UnityEngine.SharedInternalsModule">
-      <summary>
-        <para>SharedInternals is a module used internally to provide low-level functionality needed by other modules.</para>
-      </summary>
-    </member>
   </members>
 </doc>
