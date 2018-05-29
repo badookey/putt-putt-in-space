@@ -4,18 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Magnet
-  - Metal
-<<<<<<< HEAD
-  - Planet
-  - Portal
-  - Planet_Orbit_Ring
-  - Planet_Surface
-=======
-  - Portal
-  - Planet
   - rock
->>>>>>> play
   layers:
   - Default
   - TransparentFX
@@ -25,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - Environment
-  - Player
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -50,9 +39,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2517621921
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
