@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbitSpeed: 0
   orbitRadius: 5
-  orbitingObjects: []
+  orbitRing: []
 --- !u!212 &212879027515339870
 SpriteRenderer:
   m_ObjectHideFlags: 1

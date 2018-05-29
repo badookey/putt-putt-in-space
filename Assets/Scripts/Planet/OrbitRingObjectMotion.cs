@@ -5,6 +5,7 @@ using UnityEngine;
 public class OrbitRingObjectMotion : MonoBehaviour {
 
 	private bool active;
+    public Vector2 startPosition;
     public OrbitSpeedMode orbitSpeedMode;
     [Range(0, 360)]
     public int orbitSpeed;
@@ -12,6 +13,11 @@ public class OrbitRingObjectMotion : MonoBehaviour {
     private OrbitMotionManager omm;
 
     private void Start() {
+
+        if (transform.position == Vector3.zero) {
+            transform.position = startPosition;
+        }
+
         Transform orbitRingObjects = transform.parent;
         Transform planet = orbitRingObjects.parent;
         omm = planet.GetComponentInChildren<OrbitMotionManager>();
