@@ -6,7 +6,8 @@ public class SpinScript : MonoBehaviour {
 
     public bool active;
     public SpinDirection spinDirection;
-    public float speed;
+    [Range(0, 360)]
+    public int speed = 36;
     [ReadOnly]
     public float angle;
 	
