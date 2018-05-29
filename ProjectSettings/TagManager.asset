@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Magnet
   - Metal
+  - Planet
+  - Portal
+  - Planet_Orbit_Ring
+  - Planet_Surface
   layers:
   - Default
   - TransparentFX
@@ -16,8 +20,8 @@ TagManager:
   - 
   - 
   - Background
-  - 
-  - 
+  - Environment
+  - Player
   - 
   - 
   - 
