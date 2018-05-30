@@ -6,14 +6,16 @@ public class OrbitMotion : MonoBehaviour {
 
     public OrbitSpeedMode orbitSpeedMode;
     [Range(0, 360)]
-    public int orbitSpeed;
+    public int orbitSpeed = 36;
 
     private Rigidbody2D rb;
+    private ForceObject fo;
     private OrbitMotionManager omm;
     private bool _active = false;
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
+        fo = GetComponent<ForceObject>();
     }
 
     private void Update() {
@@ -45,6 +47,10 @@ public class OrbitMotion : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
 
         if (other.tag == "Planet_Orbit_Ring") {
+            // pause force system
+            if (fo != null)
+                fo.active = false;
+
             // stop moving
             rb.velocity = Vector2.zero;
 
@@ -56,6 +62,10 @@ public class OrbitMotion : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Planet_Orbit_Ring") {
+            // resume force system
+            if (fo != null)
+                fo.active = true;
+            
             // stop orbiting
             ResetOrbit();
         }
