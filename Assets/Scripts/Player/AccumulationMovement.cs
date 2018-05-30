@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AccumulationMovement : MonoBehaviour {
 
-    public float power;
-    public float threshold;
-    public DragMode drageMode;
+    public float power = 10f;
+    public float threshold = 500f;
+    public DragMode drageMode = DragMode.backward;
 
     private Vector2 startPos;
 
@@ -17,9 +17,7 @@ public class AccumulationMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         om = GetComponent<OrbitMotion>();
     }
-
-
-
+    
     private void Update() {
 
         if (Input.GetMouseButtonDown(0)) {  // start
@@ -37,7 +35,7 @@ public class AccumulationMovement : MonoBehaviour {
                     // *********************
                     // release from orbiting
                     // *********************
-                    Debug.Log("accumulation: " + ((Vector2)Input.mousePosition - startPos).magnitude);
+                    //Debug.Log("accumulation: " + ((Vector2)Input.mousePosition - startPos).magnitude);
                     switch (drageMode) {
                         case DragMode.forward:
                             rb.AddForce(newForce * power);

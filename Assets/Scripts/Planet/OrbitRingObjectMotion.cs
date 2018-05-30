@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class OrbitRingObjectMotion : MonoBehaviour {
 
-	private bool active;
+	public bool active = true;
     public Vector2 startPosition;
     public OrbitSpeedMode orbitSpeedMode;
     [Range(0, 360)]
-    public int orbitSpeed;
+    public int orbitSpeed = 36;
     public OrbitDirection orbitDirection;
+
     private OrbitMotionManager omm;
 
     private void Start() {
@@ -25,6 +26,9 @@ public class OrbitRingObjectMotion : MonoBehaviour {
     }
 
     private void Update() {
+        if (!active)
+            return;
+
         int speed = 0;
         switch (orbitSpeedMode) {
             case OrbitSpeedMode.auto:
