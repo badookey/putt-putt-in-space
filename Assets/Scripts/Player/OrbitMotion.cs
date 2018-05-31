@@ -11,8 +11,10 @@ public class OrbitMotion : MonoBehaviour {
     private Rigidbody2D rb;
     private ForceObject fo;
     private OrbitMotionManager omm;
+
     private bool _active = false;
-    
+    private OrbitDirection orbitDir;  // default
+
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         fo = GetComponent<ForceObject>();
@@ -33,7 +35,7 @@ public class OrbitMotion : MonoBehaviour {
                     break;
             }
 
-            switch (EvaluateOrbitDirection()) {
+            switch (orbitDir) {
                 case OrbitDirection.clockwise:
                     transform.RotateAround(omm.Center, Vector3.back, speed * Time.deltaTime);
                     break;
@@ -50,10 +52,13 @@ public class OrbitMotion : MonoBehaviour {
             // pause force system
             if (fo != null)
                 fo.active = false;
+            
+            // evaluate orbiting direction
+            orbitDir = EvaluateOrbitDirection(other.transform);
 
             // stop moving
             rb.velocity = Vector2.zero;
-
+            
             // start orbiting
             omm = other.GetComponent<OrbitMotionManager>();
             _active = true;
@@ -76,10 +81,12 @@ public class OrbitMotion : MonoBehaviour {
         _active = false;
     }
 
-    private OrbitDirection EvaluateOrbitDirection() {
-
-        // temp for code
-        return OrbitDirection.clockwise;
+    private OrbitDirection EvaluateOrbitDirection(Transform target) {
+        Vector2 vecToTarget = target.position - transform.position;
+        if (Vector2.SignedAngle(vecToTarget, rb.velocity) >= 0)
+            return OrbitDirection.clockwise;
+        else 
+            return OrbitDirection.counterClockwise;
     }
 
 
