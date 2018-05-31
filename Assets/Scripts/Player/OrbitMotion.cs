@@ -7,13 +7,13 @@ public class OrbitMotion : MonoBehaviour {
     public OrbitSpeedMode orbitSpeedMode;
     [Range(0, 360)]
     public int orbitSpeed = 36;
+    public OrbitDirection orbitDirection;  // default
 
     private Rigidbody2D rb;
     private ForceObject fo;
     private OrbitMotionManager omm;
 
     private bool _active = false;
-    private OrbitDirection orbitDir;  // default
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -35,7 +35,7 @@ public class OrbitMotion : MonoBehaviour {
                     break;
             }
 
-            switch (orbitDir) {
+            switch (orbitDirection) {
                 case OrbitDirection.clockwise:
                     transform.RotateAround(omm.Center, Vector3.back, speed * Time.deltaTime);
                     break;
@@ -52,13 +52,13 @@ public class OrbitMotion : MonoBehaviour {
             // pause force system
             if (fo != null)
                 fo.active = false;
-            
+
             // evaluate orbiting direction
-            orbitDir = EvaluateOrbitDirection(other.transform);
+            orbitDirection = EvaluateOrbitDirection(other.transform);
 
             // stop moving
             rb.velocity = Vector2.zero;
-            
+
             // start orbiting
             omm = other.GetComponent<OrbitMotionManager>();
             _active = true;
@@ -67,6 +67,7 @@ public class OrbitMotion : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Planet_Orbit_Ring") {
+
             // resume force system
             if (fo != null)
                 fo.active = true;
@@ -89,11 +90,11 @@ public class OrbitMotion : MonoBehaviour {
             return OrbitDirection.counterClockwise;
     }
 
-
     public bool Active {
         get { return _active; }
         set { _active = value; }
     }
+    
 }
 
 public enum OrbitSpeedMode {
