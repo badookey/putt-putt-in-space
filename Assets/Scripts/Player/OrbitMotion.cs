@@ -7,12 +7,14 @@ public class OrbitMotion : MonoBehaviour {
     public OrbitSpeedMode orbitSpeedMode;
     [Range(0, 360)]
     public int orbitSpeed = 36;
+    public OrbitDirection orbitDirection;  // default
 
     private Rigidbody2D rb;
     private ForceObject fo;
     private OrbitMotionManager omm;
+
     private bool _active = false;
-    
+
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         fo = GetComponent<ForceObject>();
@@ -33,7 +35,7 @@ public class OrbitMotion : MonoBehaviour {
                     break;
             }
 
-            switch (EvaluateOrbitDirection()) {
+            switch (orbitDirection) {
                 case OrbitDirection.clockwise:
                     transform.RotateAround(omm.Center, Vector3.back, speed * Time.deltaTime);
                     break;
@@ -51,6 +53,9 @@ public class OrbitMotion : MonoBehaviour {
             if (fo != null)
                 fo.active = false;
 
+            // evaluate orbiting direction
+            orbitDirection = EvaluateOrbitDirection(other.transform);
+
             // stop moving
             rb.velocity = Vector2.zero;
 
@@ -62,6 +67,7 @@ public class OrbitMotion : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Planet_Orbit_Ring") {
+
             // resume force system
             if (fo != null)
                 fo.active = true;
@@ -76,17 +82,19 @@ public class OrbitMotion : MonoBehaviour {
         _active = false;
     }
 
-    private OrbitDirection EvaluateOrbitDirection() {
-
-        // temp for code
-        return OrbitDirection.clockwise;
+    private OrbitDirection EvaluateOrbitDirection(Transform target) {
+        Vector2 vecToTarget = target.position - transform.position;
+        if (Vector2.SignedAngle(vecToTarget, rb.velocity) >= 0)
+            return OrbitDirection.clockwise;
+        else 
+            return OrbitDirection.counterClockwise;
     }
-
 
     public bool Active {
         get { return _active; }
         set { _active = value; }
     }
+    
 }
 
 public enum OrbitSpeedMode {
