@@ -12,10 +12,12 @@ public class AccumulationMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
     private OrbitMotion om;
+    private int _validHits;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         om = GetComponent<OrbitMotion>();
+        _validHits = 0;
     }
     
     private void Update() {
@@ -30,7 +32,7 @@ public class AccumulationMovement : MonoBehaviour {
 
             
             if (newForce.magnitude < threshold) {  // acceptable force
-
+                _validHits += 1;  // count valid hit 
                 if (om.Active) {
                     // *********************
                     // release from orbiting
@@ -57,7 +59,11 @@ public class AccumulationMovement : MonoBehaviour {
                 }
             }
         }
-        
+    }
+
+    public int ValidHits {
+        get { return _validHits; }
+        set { _validHits = value; }
     }
 
 }
