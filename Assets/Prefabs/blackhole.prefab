@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212138422203279894}
   - component: {fileID: 50047788819326704}
   - component: {fileID: 58653534506683114}
-  - component: {fileID: 114775820617145104}
   m_Layer: 0
   m_Name: blackhole
   m_TagString: Untagged
@@ -78,19 +77,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 4}
   serializedVersion: 2
   m_Radius: 13.5
---- !u!114 &114775820617145104
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052959109191132}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314ad7191f2a23243a9eec540457f1db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mass: 1
-  rb: {fileID: 50047788819326704}
 --- !u!212 &212138422203279894
 SpriteRenderer:
   m_ObjectHideFlags: 1
