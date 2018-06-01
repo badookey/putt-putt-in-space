@@ -10,20 +10,31 @@ public class reset : MonoBehaviour {
     // Use this for initialization
     void Start () {
     }
-    public IEnumerator ResetLevel()
+
+    public IEnumerator WaitSeconds(float time)
     {
-       
+        yield return new WaitForSecondsRealtime(time);
+    }
+    public string ResetLevel()
+    {
+        //GameObject parent = gameOverText.transform.parent.gameObject;
+        //GameObject s = GameObject.FindGameObjectWithTag("score");
+        HighScore.Save(SceneManager.GetActiveScene().name);
         gameOverText.gameObject.SetActive(true);
         Time.timeScale = 0.00001f;
-        yield return new WaitForSecondsRealtime(2);
+        WaitSeconds(1);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+        return null;
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            StartCoroutine(ResetLevel());
+            //StartCoroutine(ResetLevel());
+            ResetLevel();
         }
         
     }
