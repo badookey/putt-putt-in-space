@@ -32,38 +32,42 @@ public class HighScore : MonoBehaviour{
         current.time = Time.time;
         current.name = sceneName;
         current.deaths = 0;
+        PlayerPrefs.SetInt("shots", current.shots);
+        PlayerPrefs.Save();
         //Convert to Json
-        string jsonData = JsonUtility.ToJson(current);
+        /*string jsonData = JsonUtility.ToJson(current);
         //Save Json string
         if (jsonData != null)
         {
             Debug.Log("saving: " + jsonData);
             PlayerPrefs.SetString("MySettings", jsonData);
             PlayerPrefs.Save();
-        }
+        }*/
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
+        int shot = PlayerPrefs.GetInt("shots");
+        Load(shot);
+        /*
         string jsonData = PlayerPrefs.GetString("MySettings");
         Debug.Log("json string :"+jsonData);
         //Convert to Class
         Score loadedData = JsonUtility.FromJson<Score>(jsonData);
         Debug.Log("scene name from save is :"+loadedData.name);
         if (scene.name == loadedData.name)
-            Load(loadedData);
+            Load(loadedData);*/
         //Debug.Log("OnSceneLoaded: " + scene.name);
         //Debug.Log(mode);
     }
 
-    public static void Load(Score loadedData)
+    public static void Load(int loadedData)
     {
         //Load saved Json
        
         GameObject gameObject = GameObject.Find("Player");
         AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
-        Debug.Log(loadedData.shots);
-        movement.ValidHits = loadedData.shots;
+        Debug.Log(loadedData);
+        movement.ValidHits = loadedData;
        
         
     }

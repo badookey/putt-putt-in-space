@@ -11,6 +11,10 @@ public class Exit : MonoBehaviour {
 	}
     public void GameOver()
     {
+        GameObject gameObject = GameObject.Find("Player");
+        AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
+        movement.ValidHits = 0;
+        HighScore.Save(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("Victory");
     }
     // Update is called once per frame
