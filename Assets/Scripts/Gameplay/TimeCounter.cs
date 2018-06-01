@@ -12,7 +12,7 @@ public class TimeCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float f = Time.timeSinceLevelLoad;
+        float f = Time.time;// SinceLevelLoad;
         text.text = ("Time Elapsed: " + f.ToString("n2"));
     }
 }

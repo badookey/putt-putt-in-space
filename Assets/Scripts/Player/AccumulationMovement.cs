@@ -25,7 +25,7 @@ public class AccumulationMovement : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {  // start
             startPos = Input.mousePosition;
         } else if (Input.GetMouseButton(0)) {  // holding
-            Debug.Log("accumulation: " + ((Vector2)Input.mousePosition - startPos));
+            //Debug.Log("accumulation: " + ((Vector2)Input.mousePosition - startPos));
         } else if (Input.GetMouseButtonUp(0)) {  // finish
             Vector2 endPos = transform.position;
             Vector2 newForce = (Vector2)Input.mousePosition - startPos;
