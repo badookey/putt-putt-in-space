@@ -40,6 +40,8 @@ public class reset : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-		
-	}
+        if (Input.GetKeyDown("r"))
+            ResetLevel();
+
+    }
 }
