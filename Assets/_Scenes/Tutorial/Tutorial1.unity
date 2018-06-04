@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  forceType: 0
+  forceType: 1
   forceMagnitude: 1
   rb: {fileID: 0}
   mass: 1
