@@ -19,7 +19,6 @@ public class reset : MonoBehaviour {
     {
         //GameObject parent = gameOverText.transform.parent.gameObject;
         //GameObject s = GameObject.FindGameObjectWithTag("score");
-        HighScore.Save(SceneManager.GetActiveScene().name);
         gameOverText.gameObject.SetActive(true);
         Time.timeScale = 0.00001f;
         WaitSeconds(1);
