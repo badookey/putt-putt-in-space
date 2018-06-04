@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 
 public class Exit : MonoBehaviour {
-
+    public string nextscenename;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,7 +24,7 @@ public class Exit : MonoBehaviour {
         {
             // Save Scene
             case 0:
-                SceneManager.LoadScene("Victory");
+                SceneManager.LoadScene(nextscenename);
                 break;
 
             // Save and Quit.
