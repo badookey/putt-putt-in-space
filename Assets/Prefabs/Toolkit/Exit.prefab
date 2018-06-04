@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212152690986670626}
   - component: {fileID: 58579758590957746}
   - component: {fileID: 114079766154539152}
+  - component: {fileID: 114413998848062330}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Planet
@@ -68,6 +69,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0445896f8e251cb49af65bf98a950b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextscenename: 
+--- !u!114 &114413998848062330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887820987068154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c835d5be5100e4f97e8e37ff44d88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  spinDirection: 0
+  speed: 36
+  angle: 0
 --- !u!212 &212152690986670626
 SpriteRenderer:
   m_ObjectHideFlags: 1
