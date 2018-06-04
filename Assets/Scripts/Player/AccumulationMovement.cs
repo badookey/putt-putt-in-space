@@ -17,8 +17,10 @@ public class AccumulationMovement : MonoBehaviour {
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         om = GetComponent<OrbitMotion>();
-        if (_validHits == null)
-            _validHits = 0;
+        
+        // comment unreached codes - linli
+        //if (_validHits == null)
+        //    _validHits = 0;
     }
     
     private void Update() {
@@ -31,19 +33,34 @@ public class AccumulationMovement : MonoBehaviour {
             Vector2 endPos = transform.position;
             Vector2 newForce = (Vector2)Input.mousePosition - startPos;
 
+            // plan 1
+            //if (newForce.magnitude < threshold) {  // acceptable force
+            //    _validHits += 1;  // count valid hit 
+
+            //    switch (drageMode) {
+            //        case DragMode.forward:
+            //            rb.AddForce(newForce * power);
+            //            break;
+            //        case DragMode.backward:
+            //            rb.AddForce(-1.0f * newForce * power);
+            //            break;
+            //    }
+            //}
             
-            if (newForce.magnitude < threshold) {  // acceptable force
+            // plan 2
+            if (newForce.magnitude > threshold) {  // acceptable force
+                newForce = Vector3.ClampMagnitude(newForce, threshold);
+            }
 
-                _validHits += 1;  // count valid hit 
+            _validHits += 1;  // count valid hit 
 
-                switch (drageMode) {
-                    case DragMode.forward:
-                        rb.AddForce(newForce * power);
-                        break;
-                    case DragMode.backward:
-                        rb.AddForce(-1.0f * newForce * power);
-                        break;
-                }
+            switch (drageMode) {
+                case DragMode.forward:
+                    rb.AddForce(newForce * power);
+                    break;
+                case DragMode.backward:
+                    rb.AddForce(-1.0f * newForce * power);
+                    break;
             }
         }
     }

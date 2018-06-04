@@ -44,12 +44,23 @@ public class OrbitRingRenderer : MonoBehaviour {
         float alpha = 1.0f;
         Gradient gradient = new Gradient();
         gradient.SetKeys(
-            new GradientColorKey[] { new GradientColorKey(Color.green, 0.0f), new GradientColorKey(Color.red, 1.0f) },
-            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
-            );
+            new GradientColorKey[] {
+                new GradientColorKey(Color.red, 0.0f),
+                new GradientColorKey(Color.yellow, 0.2f),
+                new GradientColorKey(Color.blue, 0.4f),
+                new GradientColorKey(Color.green, 0.6f),
+                new GradientColorKey(Color.cyan, 0.8f),
+                new GradientColorKey(Color.red, 1.0f)
+            },
+            new GradientAlphaKey[] {
+                new GradientAlphaKey(alpha, 0.0f),
+                new GradientAlphaKey(alpha, 0.2f),
+                new GradientAlphaKey(alpha, 0.4f),
+                new GradientAlphaKey(alpha, 0.6f),
+                new GradientAlphaKey(alpha, 0.8f),
+                new GradientAlphaKey(alpha, 1.0f)
+            });
         lr.colorGradient = gradient;
-        
-        
     }
 
     private Vector3[] GetPoints(float off) {
