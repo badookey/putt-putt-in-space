@@ -19,6 +19,7 @@ public class AccumulationMovement : MonoBehaviour {
         om = GetComponent<OrbitMotion>();
 
             _validHits = 0;
+        drageMode = (DragMode) PlayerPrefs.GetInt("dragmode");
 
     }
     
@@ -78,6 +79,8 @@ public class AccumulationMovement : MonoBehaviour {
         {
             drageMode = DragMode.backward;
         }
+        PlayerPrefs.SetInt("dragmode", (int)drageMode);
+        PlayerPrefs.Save();
     }
 
     public int ValidHits {
