@@ -322,6 +322,11 @@ Prefab:
       propertyPath: m_AutoTiling
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224336812733604152, guid: 039d5ab213ff4424db81d67cb331971d,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 039d5ab213ff4424db81d67cb331971d, type: 2}
   m_IsPrefabParent: 0
@@ -3421,11 +3426,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -93.9
+      value: 57.1
       objectReference: {fileID: 0}
     - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -36.3
+      value: -35.5
       objectReference: {fileID: 0}
     - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
       propertyPath: m_LocalPosition.z

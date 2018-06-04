@@ -23,17 +23,40 @@ public class HighScore : MonoBehaviour{
         Debug.Log("Start called");
         //high = new HighScore();
     }
-    public static void Save(string sceneName)
+    public static float[] Save(string sceneName)
     {
         //HighScore highScore = new HighScore();
+        string scene = SceneManager.GetActiveScene().name;
         GameObject gameObject = GameObject.Find("Player");
         AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
         current.shots = movement.ValidHits;
-        current.time = Time.time;
+        current.time = Time.timeSinceLevelLoad;
         current.name = sceneName;
         current.deaths = 0;
-        PlayerPrefs.SetInt("shots", current.shots);
-        PlayerPrefs.Save();
+        int highshot = PlayerPrefs.GetInt("shots"+scene);
+        float hightime = PlayerPrefs.GetFloat("time" + scene);
+        Debug.Log("highshot = "+highshot);
+        Debug.Log("hightime = "+hightime);
+        Debug.Log("current shot = " + current.shots);
+        Debug.Log("current time = " + current.time);
+        if (highshot==0)
+        {
+            PlayerPrefs.SetFloat("time" + scene, current.time);
+            PlayerPrefs.SetInt("shots" + scene, current.shots);
+            PlayerPrefs.Save();
+        }
+        if (current.shots <= highshot)
+        {
+            if(current.time<hightime||current.shots<highshot)
+            {
+                Debug.Log("should be saving here");
+                PlayerPrefs.SetFloat("time" + scene, current.time);
+                PlayerPrefs.SetInt("shots" + scene, current.shots);
+                PlayerPrefs.Save();
+            }
+        }
+        
+        
         //Convert to Json
         /*string jsonData = JsonUtility.ToJson(current);
         //Save Json string
@@ -43,6 +66,8 @@ public class HighScore : MonoBehaviour{
             PlayerPrefs.SetString("MySettings", jsonData);
             PlayerPrefs.Save();
         }*/
+        float[] a = { current.shots, current.time, highshot, hightime };
+        return a;
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
