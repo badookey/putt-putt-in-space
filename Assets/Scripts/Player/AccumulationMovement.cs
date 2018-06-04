@@ -24,6 +24,10 @@ public class AccumulationMovement : MonoBehaviour {
     
     private void Update() {
 
+        if (Input.GetKeyDown("y"))
+        {
+            SwapDragMode();
+        }
         if (Input.GetMouseButtonDown(0)) {  // start
             startPos = Input.mousePosition;
         } else if (Input.GetMouseButton(0)) {  // holding
@@ -61,6 +65,18 @@ public class AccumulationMovement : MonoBehaviour {
                     rb.AddForce(-1.0f * newForce * power);
                     break;
             }
+        }
+    }
+
+    private void SwapDragMode()
+    {
+        if (drageMode == DragMode.backward)
+        {
+            drageMode = DragMode.forward;
+        }
+        else
+        {
+            drageMode = DragMode.backward;
         }
     }
 
