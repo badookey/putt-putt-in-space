@@ -17,14 +17,9 @@ public class AccumulationMovement : MonoBehaviour {
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         om = GetComponent<OrbitMotion>();
-<<<<<<< HEAD
+
             _validHits = 0;
-=======
-        
-        // comment unreached codes - linli
-        //if (_validHits == null)
-        //    _validHits = 0;
->>>>>>> cb4e39d24bfb58c6b74a34ef5e5df4f90e961a56
+
     }
     
     private void Update() {
