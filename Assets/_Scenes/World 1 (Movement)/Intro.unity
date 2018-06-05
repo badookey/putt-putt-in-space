@@ -141,7 +141,7 @@ Transform:
   - {fileID: 1128528757}
   - {fileID: 601813354}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &112230020
 Prefab:
@@ -344,7 +344,7 @@ Transform:
   - {fileID: 1915891292}
   - {fileID: 1520634691}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600209948
 GameObject:
@@ -398,6 +398,8 @@ MonoBehaviour:
   power: 5
   threshold: 500
   drageMode: 1
+  speed: 5
+  target: {fileID: 0}
 --- !u!58 &600209951
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -492,7 +494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &600209955
 MonoBehaviour:
@@ -567,7 +569,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 35
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -594,7 +596,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &790469693
 Prefab:
@@ -811,7 +813,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1128528757 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4759171137811486, guid: 3554bbc897124ec4482d5dcabaaa5f7a,
+  m_PrefabParentObject: {fileID: 4356276133705962, guid: 3554bbc897124ec4482d5dcabaaa5f7a,
     type: 2}
   m_PrefabInternal: {fileID: 1128528756}
 --- !u!1001 &1411067984
@@ -1156,7 +1158,7 @@ Transform:
   - {fileID: 1902836800}
   - {fileID: 1485820186}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1723771274
 Prefab:
