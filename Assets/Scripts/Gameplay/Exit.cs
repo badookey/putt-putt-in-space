@@ -17,7 +17,7 @@ public class Exit : MonoBehaviour {
     void OnGUI()
     {
         if (show)
-            windowRect = GUI.Window(0, windowRect, DialogWindow, "You Won");
+            windowRect = GUI.Window(0, windowRect, DialogWindow, "You completed "+ SceneManager.GetActiveScene().name);
     }
 
     // This is the actual window.

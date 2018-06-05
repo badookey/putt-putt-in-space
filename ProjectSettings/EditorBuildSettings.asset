@@ -5,28 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Victory.unity
     guid: 6c4dcfd18a625374ab80456c9fd1e2a4
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Demo v2.0.unity
     guid: 2a9a81e6679e9da4088b3ca9e2140236
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Cameron.unity
     guid: 25ab52668e880a64995edfddefa35900
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Cameron2.unity
     guid: 58fb7abcf6ae13e4798ad3449217eef9
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Demo v.2.0.1.unity
     guid: 4790daa7dc0bc4c4c94c5e8726f31bc8
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Demo v.2.2.unity
     guid: 6bd9fcf8812b2a34e80293481a1fdd77
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Demo v2.3.unity
     guid: 9433ebcc188e54540b48dfec4ce4d6a3
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Tristan.unity
     guid: 0ab928437de9dae428e1a7b02a133f83
   - enabled: 1
@@ -35,10 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Tutorial/Tutorial2.unity
     guid: 7eb8f01097ee51440938dc7e058a6992
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Demo v2.1.unity
     guid: 0d6747e97d65d3b40867f06a4da7a19e
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/large orbit range demo.unity
     guid: daba72139829e0745ad239c976c5f5a1
   - enabled: 1
@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/Originals/Luke1.unity
     guid: 6a20a4fb796bfb841b57c33c722be148
   - enabled: 1
-    path: Assets/_Scenes/Menu.unity
+    path: Assets/_Scenes/LevelSelect.unity
     guid: 52ec736f6c1d1424da5a6f8d69cac054
   - enabled: 1
     path: Assets/_Scenes/World 2 (Planets)/2-2.unity
@@ -66,7 +66,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/World 2 (Planets)/2-1.unity
     guid: 6ad7cf76a2498b04e8b3855bb3e45768
   - enabled: 1
-    path: Assets/_Scenes/menu2.unity
+    path: Assets/_Scenes/Menu.unity
     guid: 7724dd3eb909565448ddfc45b3f19c39
   - enabled: 1
     path: Assets/_Scenes/World 4 (AntiGravity)/4-1.unity
@@ -77,3 +77,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/World 4 (AntiGravity)/4-3.unity
     guid: d55ce93232d274e4f802bcf900a22af5
+  - enabled: 1
+    path: Assets/_Scenes/World 1 (Movement)/1-1.unity
+    guid: e0910ec9a311cb546b449c58cdedbab9
+  - enabled: 1
+    path: Assets/_Scenes/World 1 (Movement)/1-2.unity
+    guid: 87afaaf38090b254382a68a17c07f14e
+  - enabled: 1
+    path: Assets/_Scenes/World 1 (Movement)/1-3.unity
+    guid: b068b7be1c567b04697f553f85e896b2
+  - enabled: 1
+    path: Assets/_Scenes/World 1 (Movement)/1-4.unity
+    guid: c37215766adbfb643a9bb921ac0a99d5
+  m_configObjects: {}
