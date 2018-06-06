@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Menu.unity
+    guid: 7724dd3eb909565448ddfc45b3f19c39
   - enabled: 0
     path: Assets/_Scenes/Victory.unity
     guid: 6c4dcfd18a625374ab80456c9fd1e2a4
@@ -29,10 +32,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/Originals/Tristan.unity
     guid: 0ab928437de9dae428e1a7b02a133f83
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tutorial/Tutorial1.unity
     guid: 45e14a2bdd1c79842a65eef9aa17a8bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tutorial/Tutorial2.unity
     guid: 7eb8f01097ee51440938dc7e058a6992
   - enabled: 1
@@ -59,13 +62,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/Originals/large orbit range demo.unity
     guid: daba72139829e0745ad239c976c5f5a1
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/LevelC1.unity
     guid: 926e592c157532d418bf075ee67b7807
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/LevelC2.unity
     guid: c0e821ea498452041b50022ea1ebf6e1
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Originals/Luke1.unity
     guid: 6a20a4fb796bfb841b57c33c722be148
   - enabled: 1
@@ -84,9 +87,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/World 2 (Planets)/2-1.unity
     guid: 6ad7cf76a2498b04e8b3855bb3e45768
   - enabled: 1
-    path: Assets/_Scenes/Menu.unity
-    guid: 7724dd3eb909565448ddfc45b3f19c39
-  - enabled: 1
     path: Assets/_Scenes/World 4 (AntiGravity)/4-1.unity
     guid: 56bf882441837b541b5b962cf378a624
   - enabled: 1
@@ -95,6 +95,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/World 4 (AntiGravity)/4-3.unity
     guid: d55ce93232d274e4f802bcf900a22af5
+  - enabled: 1
+    path: Assets/_Scenes/World 3 (Portals)/3-1.unity
+    guid: b0dfbeab70da6194d958a6bebe883215
+  - enabled: 1
+    path: Assets/_Scenes/World 3 (Portals)/3-2.unity
+    guid: 4d12fbd87050cbb4b9a9e9cbe9a87cbe
+  - enabled: 1
+    path: Assets/_Scenes/World 3 (Portals)/3-3.unity
+    guid: ee1fc64ec0cca084ba37cce874d2d9c1
+  - enabled: 1
+    path: Assets/_Scenes/World 3 (Portals)/3-4.unity
+    guid: a0b1cb6c680e52a44989d20acd24526b
   - enabled: 1
     path: Assets/_Scenes/World 1 (Movement)/1-1.unity
     guid: e0910ec9a311cb546b449c58cdedbab9
