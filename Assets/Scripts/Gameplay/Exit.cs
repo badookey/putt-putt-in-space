@@ -13,13 +13,44 @@ public class Exit : MonoBehaviour {
     private Rect windowRect = new Rect((Screen.width - 200) / 2, (Screen.height - 300) / 2, 200, 300);
     // Only show it if needed.
     private bool show = false;
+    private bool menuShow = false;
 
     void OnGUI()
     {
         if (show)
             windowRect = GUI.Window(0, windowRect, DialogWindow, "You completed "+ SceneManager.GetActiveScene().name);
+        if(menuShow)
+            windowRect = GUI.Window(0, windowRect, MenuWindow, "Paused" );
     }
+    void MenuWindow(int windowID)
+    {
+        Time.timeScale = 0;
+        float y = 20;
+        
+         
 
+
+        if (GUI.Button(new Rect(5, y, windowRect.width - 10, 20), "***LEVEL SELECT***"))
+        {
+            SceneManager.LoadScene("LevelSelect");
+            Time.timeScale = 1;
+            menuShow = false;
+        }
+        if (GUI.Button(new Rect(5, 2 * y, windowRect.width - 10, 20), "Main Menu"))
+        {
+            SceneManager.LoadScene("Menu");
+            Time.timeScale = 1;
+            menuShow = false;
+        }
+        if (GUI.Button(new Rect(5, 3 * y, windowRect.width - 10, 20), "Exit Game"))
+        {
+            Application.Quit();
+            Time.timeScale = 1;
+            menuShow = false;
+        }
+        
+
+    }
     // This is the actual window.
     void DialogWindow(int windowID)
     {
@@ -86,8 +117,14 @@ public class Exit : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(menuShow)
+                Time.timeScale = 1;
+            menuShow = !menuShow;
+            
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
