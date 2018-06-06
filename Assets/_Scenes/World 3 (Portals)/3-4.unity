@@ -236,6 +236,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114079766154539152, guid: ac12124743ee81a469c38e2115cc9873,
+        type: 2}
+      propertyPath: nextscenename
+      value: Menu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
   m_IsPrefabParent: 0
@@ -819,6 +824,8 @@ MonoBehaviour:
   power: 5
   threshold: 500
   drageMode: 1
+  speed: 5
+  target: {fileID: 0}
 --- !u!58 &600209951
 CircleCollider2D:
   m_ObjectHideFlags: 0
