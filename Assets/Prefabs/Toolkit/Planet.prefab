@@ -54,6 +54,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4520614848887352}
+  - component: {fileID: 114881158358914884}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -518,6 +519,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothness: 90
+--- !u!114 &114881158358914884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1305462170068350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409d67ef0a1032642b7ac0d490bfe734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  forceType: 0
+  forceMagnitude: 250
 --- !u!120 &120675105450373292
 LineRenderer:
   m_ObjectHideFlags: 1

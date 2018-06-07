@@ -210,6 +210,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4784162311832136}
+  - component: {fileID: 114884689056695810}
   m_Layer: 0
   m_Name: Planet 2 moons
   m_TagString: Planet
@@ -684,6 +685,20 @@ MonoBehaviour:
   orbitSpeedMode: 0
   orbitSpeed: 16
   orbitDirection: 0
+--- !u!114 &114884689056695810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813394287886424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409d67ef0a1032642b7ac0d490bfe734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  forceType: 0
+  forceMagnitude: 250
 --- !u!114 &114889511660647766
 MonoBehaviour:
   m_ObjectHideFlags: 1
