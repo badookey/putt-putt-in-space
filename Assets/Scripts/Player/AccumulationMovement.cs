@@ -6,7 +6,7 @@ public class AccumulationMovement : MonoBehaviour {
 
     public float power = 10f;
     public float threshold = 500f;
-    public DragMode drageMode = DragMode.backward;
+    public DragMode drageMode = DragMode.forward;
 
     private Vector3 startPos;
     private Vector3 _sizeStart;

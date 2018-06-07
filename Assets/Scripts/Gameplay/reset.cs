@@ -15,32 +15,36 @@ public class reset : MonoBehaviour {
     {
         yield return new WaitForSecondsRealtime(time);
     }
-    public string ResetLevel()
+    public IEnumerator ResetLevel()
     {
         //GameObject parent = gameOverText.transform.parent.gameObject;
         //GameObject s = GameObject.FindGameObjectWithTag("score");
         gameOverText.gameObject.SetActive(true);
-        Time.timeScale = 0.00001f;
-        WaitSeconds(1);
+        Time.timeScale = 0.000000000001f;
+        float pauseEndTime = Time.realtimeSinceStartup ;
+        pauseEndTime += (float).5;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return 0;
+        }
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
-        return null;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            //StartCoroutine(ResetLevel());
-            ResetLevel();
+            StartCoroutine(ResetLevel());
+            //ResetLevel();
         }
         
     }
     // Update is called once per frame
     void Update () {
         if (Input.GetKeyDown("r"))
-            ResetLevel();
+            StartCoroutine(ResetLevel());
 
     }
 }

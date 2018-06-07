@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The Space Golf
+  m_Text: Putt Putt in Space
 --- !u!222 &2068080
 CanvasRenderer:
   m_ObjectHideFlags: 0
