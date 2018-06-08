@@ -29,7 +29,7 @@ public class Exit : MonoBehaviour {
         GameObject gameObject = GameObject.Find("Player");
         AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
 
-        if (GUI.Button(new Rect(5, y, windowRect.width - 10, 20), "Replay Level"))
+        if (GUI.Button(new Rect(5, y, windowRect.width - 10, 20), "Restart Level"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1;
