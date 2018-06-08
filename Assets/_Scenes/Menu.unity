@@ -440,7 +440,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3ee8901d909800449a2b5f89e143d6c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.39
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -535,7 +535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &430551888
 Prefab:
@@ -843,7 +843,7 @@ RectTransform:
   - {fileID: 21356269}
   - {fileID: 1365853953}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1105,56 +1105,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb28e96da47356243be39d755418e66c, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &906711853
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -81.64104
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 37.113487
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984500754363342, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ac12124743ee81a469c38e2115cc9873, type: 2}
-  m_IsPrefabParent: 0
 --- !u!224 &1098401561 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224774615032462232, guid: cb28e96da47356243be39d755418e66c,
@@ -1359,7 +1309,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1364294859
 Prefab:
@@ -1398,7 +1348,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4459400488058484, guid: 79eb40c21904be14ab4aee187b063754, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79eb40c21904be14ab4aee187b063754, type: 2}
@@ -1907,7 +1857,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4861605303582140, guid: d25a4ac8b9a666447bf198d3d34e8400, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d25a4ac8b9a666447bf198d3d34e8400, type: 2}
