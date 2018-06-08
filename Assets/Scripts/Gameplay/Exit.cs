@@ -10,7 +10,7 @@ public class Exit : MonoBehaviour {
 	void Start () {
         Time.timeScale = 1;
 	}
-    private Rect windowRect = new Rect((Screen.width - 200) / 2, (Screen.height - 300) / 2, 200, 300);
+    private Rect windowRect = new Rect((Screen.width - (int)((Screen.width) * .2)) / 2, (Screen.height - (int)((Screen.height) * .278)) / 2, (int)((Screen.width) *.2), (int)((Screen.height) *.278));
     // Only show it if needed.
     private bool show = false;
     private bool menuShow = false;
@@ -20,12 +20,12 @@ public class Exit : MonoBehaviour {
         if (show)
             windowRect = GUI.Window(0, windowRect, DialogWindow, "You completed "+ SceneManager.GetActiveScene().name);
         if(menuShow)
-            windowRect = GUI.Window(0, windowRect, MenuWindow, "Paused - " + SceneManager.GetActiveScene().name);
+            windowRect = GUI.Window(1, windowRect, MenuWindow, "Paused - " + SceneManager.GetActiveScene().name);
     }
     void MenuWindow(int windowID)
     {
         Time.timeScale = 0;
-        float y = 20;
+        float y = (float)((int)((Screen.width) * .2)*.1);
         GameObject gameObject = GameObject.Find("Player");
         AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
 
