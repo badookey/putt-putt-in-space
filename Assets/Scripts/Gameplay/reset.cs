@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class reset : MonoBehaviour {
 
-    public Text gameOverText;
+    public GameObject gameOverText;
     // Use this for initialization
     void Start () {
+        
     }
 
     public IEnumerator WaitSeconds(float time)
@@ -19,7 +20,8 @@ public class reset : MonoBehaviour {
     {
         //GameObject parent = gameOverText.transform.parent.gameObject;
         //GameObject s = GameObject.FindGameObjectWithTag("score");
-        gameOverText.gameObject.SetActive(true);
+        gameOverText = GameObject.FindGameObjectWithTag("Deathtext");
+        gameOverText.GetComponent<Text>().enabled =true;
         Time.timeScale = 0.000000000001f;
         float pauseEndTime = Time.realtimeSinceStartup ;
         pauseEndTime += (float).5;

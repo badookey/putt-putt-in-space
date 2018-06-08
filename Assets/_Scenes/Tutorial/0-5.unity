@@ -401,6 +401,11 @@ Prefab:
       propertyPath: forceMagnitude
       value: 50000
       objectReference: {fileID: 0}
+    - target: {fileID: 114121963875584480, guid: 09ab9f746f98f5249befcb2f0ff8744e,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09ab9f746f98f5249befcb2f0ff8744e, type: 2}
   m_IsPrefabParent: 0
@@ -868,6 +873,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114203091516710726, guid: 1d94d0301a195db40a6d2499c61a9eb4,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d94d0301a195db40a6d2499c61a9eb4, type: 2}
   m_IsPrefabParent: 0
@@ -1059,6 +1069,11 @@ Prefab:
     - target: {fileID: 1905914545931988, guid: 09ab9f746f98f5249befcb2f0ff8744e, type: 2}
       propertyPath: m_Name
       value: Anti-Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114121963875584480, guid: 09ab9f746f98f5249befcb2f0ff8744e,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09ab9f746f98f5249befcb2f0ff8744e, type: 2}

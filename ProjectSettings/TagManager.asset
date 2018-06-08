@@ -9,6 +9,7 @@ TagManager:
   - Planet_Surface
   - Planet_Orbit_Ring
   - Portal
+  - Deathtext
   layers:
   - Default
   - TransparentFX
