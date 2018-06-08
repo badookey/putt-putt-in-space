@@ -26,7 +26,8 @@ public class Exit : MonoBehaviour {
     {
         Time.timeScale = 0;
         float y = 20;
-
+        GameObject gameObject = GameObject.Find("Player");
+        AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
 
         if (GUI.Button(new Rect(5, y, windowRect.width - 10, 20), "Replay Level"))
         {
@@ -40,13 +41,19 @@ public class Exit : MonoBehaviour {
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 3 * y+2, windowRect.width - 10, 20), "Main Menu"))
+        if (GUI.Button(new Rect(5, 3 * y + 2, windowRect.width - 10, 20), "Input mode - "+movement.drageMode))
+        {
+            movement.SwapDragMode();
+
+
+        }
+        if (GUI.Button(new Rect(5, 5 * y+2, windowRect.width - 10, 20), "Main Menu"))
         {
             SceneManager.LoadScene("Menu");
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 4 * y+2, windowRect.width - 10, 20), "Exit Game"))
+        if (GUI.Button(new Rect(5, 6 * y+2, windowRect.width - 10, 20), "Exit Game"))
         {
             Application.Quit();
             Time.timeScale = 1;

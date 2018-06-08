@@ -98,7 +98,7 @@ public class AccumulationMovement : MonoBehaviour {
         }
     }
 
-    private void SwapDragMode()
+    public void SwapDragMode()
     {
         if (drageMode == DragMode.backward)
         {
