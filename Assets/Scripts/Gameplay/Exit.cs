@@ -10,59 +10,59 @@ public class Exit : MonoBehaviour {
 	void Start () {
         Time.timeScale = 1;
 	}
-    private Rect windowRect = new Rect((Screen.width - (int)((Screen.width) * .2)) / 2, (Screen.height - (int)((Screen.height) * .278)) / 2, (int)((Screen.width) *.2), (int)((Screen.height) *.3));
+    private Rect windowRect = new Rect(0, 0, (int)((Screen.width)), (int)((Screen.height)));
     // Only show it if needed.
     private bool show = false;
     private bool menuShow = false;
+    
 
     void OnGUI()
     {
+        GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
+        windowStyle.fontSize = (int)(30);
         if (show)
-            windowRect = GUI.Window(0, windowRect, DialogWindow, "You completed "+ SceneManager.GetActiveScene().name);
+            windowRect = GUI.Window(0, windowRect, DialogWindow, "You completed "+ SceneManager.GetActiveScene().name,windowStyle);
         if(menuShow)
-            windowRect = GUI.Window(1, windowRect, MenuWindow, "Paused - " + SceneManager.GetActiveScene().name);
+            windowRect = GUI.Window(1, windowRect, MenuWindow, "Paused - " + SceneManager.GetActiveScene().name,windowStyle);
     }
     //PlayerPrefs.SetInt("dragmode", (int) drageMode);
     //PlayerPrefs.Save();
     void MenuWindow(int windowID)
     {
         Time.timeScale = 0;
-        float y = (float)((int)((Screen.width) * .2)*.1);
+        float y = (float)(windowRect.height / 10);
+        GUIStyle myStyle = new GUIStyle(GUI.skin.button);
+        myStyle.fontSize = (int)(40);
         GameObject gameObject = GameObject.Find("Player");
         AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
 
-        if (GUI.Button(new Rect(5, y, windowRect.width - 10, 20), "Restart Level"))
+        if (GUI.Button(new Rect(5, y, windowRect.width - 10, windowRect.height / 10), "Restart Level",myStyle))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 2 * y+2, windowRect.width - 10, 20), "***DEBUG LEVEL SELECT***"))
+        if (GUI.Button(new Rect(5, 2 * y+15, windowRect.width - 10, windowRect.height / 10), "***DEBUG LEVEL SELECT***",myStyle))
         {
             SceneManager.LoadScene("LevelSelect");
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 3 * y + 2, windowRect.width - 10, 20), "Input mode - "+movement.drageMode))
+        if (GUI.Button(new Rect(5, 3 * y + 30, windowRect.width - 10, windowRect.height / 10), "Input mode - "+movement.drageMode,myStyle))
         {
             movement.SwapDragMode();
 
 
         }
-        GUI.Label(new Rect(5, 4 * y + 4, windowRect.width - 10, 20), "Volume");
-        GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-        float volume = GUI.HorizontalSlider(new Rect(5, 5 * y + 4, windowRect.width - 10, 20), PlayerPrefs.GetFloat("volume"),0,1);
         
-            PlayerPrefs.SetFloat("volume",volume );
-            PlayerPrefs.Save();
         
-        if (GUI.Button(new Rect(5, 6 * y+4, windowRect.width - 10, 20), "Main Menu"))
+        if (GUI.Button(new Rect(5, 4 * y+45, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
         {
             SceneManager.LoadScene("Menu");
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 7 * y+2, windowRect.width - 10, 20), "Exit Game"))
+        if (GUI.Button(new Rect(5, 5 * y+60, windowRect.width - 10, windowRect.height/10), "Exit Game",myStyle))
         {
             Application.Quit();
             Time.timeScale = 1;
@@ -75,31 +75,35 @@ public class Exit : MonoBehaviour {
     void DialogWindow(int windowID)
     {
         Time.timeScale = 0;
-        float y = 20;
+        float y = windowRect.height / 10;
+        GUIStyle myStyle = new GUIStyle(GUI.skin.button);
+        GUIStyle labelStyle = new GUIStyle(GUI.skin.label);
+        myStyle.fontSize = (int)(40);
+        labelStyle.fontSize = (int)40;
         float[] a = HighScore.Save(SceneManager.GetActiveScene().name);
-        GUI.Label(new Rect(5, y, windowRect.width, 20), string.Format("Your score: {0} Time: {1}", (int)a[0], a[1]));
-        GUI.Label(new Rect(5, 2*y, windowRect.width, 20), string.Format("High score: {0} Time: {1}", (int)a[2], a[3]));
+        GUI.Label(new Rect(5, y , windowRect.width - 10, windowRect.height / 10), string.Format("Your score: {0} Time: {1}", (int)a[0], a[1]),labelStyle);
+        GUI.Label(new Rect(5, 2*y, windowRect.width - 10, windowRect.height / 10), string.Format("High score: {0} Time: {1}", (int)a[2], a[3]),labelStyle);
 
-        if (GUI.Button(new Rect(5, 4*y+2, windowRect.width - 10, 20), "Replay Level"))
+        if (GUI.Button(new Rect(5, 4 * y+30, windowRect.width - 10, windowRect.height / 10), "Replay Level",myStyle))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 3*y+2, windowRect.width - 10, 20), "Next Level"))
+        if (GUI.Button(new Rect(5, 3 * y+15, windowRect.width - 10, windowRect.height / 10), "Next Level",myStyle))
         {
             SceneManager.LoadScene(nextscenename);
             Time.timeScale = 1;
             show = false;
         }
-        if (GUI.Button(new Rect(5, 5*y+2, windowRect.width - 10, 20), "Main Menu"))
+        if (GUI.Button(new Rect(5, 5 * y+45, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
         {
             SceneManager.LoadScene("Menu");
             Time.timeScale = 1;
             show = false;
         }
-        if (GUI.Button(new Rect(5, 6*y+2, windowRect.width - 10, 20), "Exit"))
+        if (GUI.Button(new Rect(5, 6 * y+60, windowRect.width - 10, windowRect.height / 10), "Exit",myStyle))
         {
             Application.Quit();
             Time.timeScale = 1;
