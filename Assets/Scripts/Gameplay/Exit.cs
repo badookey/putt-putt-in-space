@@ -10,7 +10,7 @@ public class Exit : MonoBehaviour {
 	void Start () {
         Time.timeScale = 1;
 	}
-    private Rect windowRect = new Rect((Screen.width - (int)((Screen.width) * .2)) / 2, (Screen.height - (int)((Screen.height) * .278)) / 2, (int)((Screen.width) *.2), (int)((Screen.height) *.278));
+    private Rect windowRect = new Rect((Screen.width - (int)((Screen.width) * .2)) / 2, (Screen.height - (int)((Screen.height) * .278)) / 2, (int)((Screen.width) *.2), (int)((Screen.height) *.3));
     // Only show it if needed.
     private bool show = false;
     private bool menuShow = false;
@@ -22,6 +22,8 @@ public class Exit : MonoBehaviour {
         if(menuShow)
             windowRect = GUI.Window(1, windowRect, MenuWindow, "Paused - " + SceneManager.GetActiveScene().name);
     }
+    //PlayerPrefs.SetInt("dragmode", (int) drageMode);
+    //PlayerPrefs.Save();
     void MenuWindow(int windowID)
     {
         Time.timeScale = 0;
@@ -47,13 +49,20 @@ public class Exit : MonoBehaviour {
 
 
         }
-        if (GUI.Button(new Rect(5, 5 * y+2, windowRect.width - 10, 20), "Main Menu"))
+        GUI.Label(new Rect(5, 4 * y + 4, windowRect.width - 10, 20), "Volume");
+        GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+        float volume = GUI.HorizontalSlider(new Rect(5, 5 * y + 4, windowRect.width - 10, 20), PlayerPrefs.GetFloat("volume"),0,1);
+        
+            PlayerPrefs.SetFloat("volume",volume );
+            PlayerPrefs.Save();
+        
+        if (GUI.Button(new Rect(5, 6 * y+4, windowRect.width - 10, 20), "Main Menu"))
         {
             SceneManager.LoadScene("Menu");
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 6 * y+2, windowRect.width - 10, 20), "Exit Game"))
+        if (GUI.Button(new Rect(5, 7 * y+2, windowRect.width - 10, 20), "Exit Game"))
         {
             Application.Quit();
             Time.timeScale = 1;
