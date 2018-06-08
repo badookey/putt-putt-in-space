@@ -9,6 +9,7 @@ public class OrbitMotionManager : MonoBehaviour {
     public float orbitRadius = 5;
     public List<OrbitRingObjectMotion> orbitRing;
 
+    private OrbitMotion otherOm;
     private CircleCollider2D cc;
     
     private void Start() {
@@ -26,7 +27,7 @@ public class OrbitMotionManager : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
-            OrbitMotion otherOm = other.GetComponent<OrbitMotion>();
+            otherOm = other.GetComponent<OrbitMotion>();
             
             // do something
         }
