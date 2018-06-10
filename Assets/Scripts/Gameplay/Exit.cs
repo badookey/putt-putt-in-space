@@ -14,6 +14,7 @@ public class Exit : MonoBehaviour {
     // Only show it if needed.
     private bool show = false;
     private bool menuShow = false;
+    private GameObject audio;
     
 
     void OnGUI()
@@ -35,6 +36,16 @@ public class Exit : MonoBehaviour {
         myStyle.fontSize = (int)(40);
         GameObject gameObject = GameObject.Find("Player");
         AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
+        audio = GameObject.FindGameObjectWithTag("Audio");
+        string x;
+        if (!audio.GetComponent<AudioSource>().mute)
+        {
+            x = "enabled";
+        }
+        else
+        {
+            x = "disabled";
+        }
 
         if (GUI.Button(new Rect(5, y, windowRect.width - 10, windowRect.height / 10), "Restart Level",myStyle))
         {
@@ -42,7 +53,7 @@ public class Exit : MonoBehaviour {
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 2 * y+15, windowRect.width - 10, windowRect.height / 10), "***DEBUG LEVEL SELECT***",myStyle))
+        if (GUI.Button(new Rect(5, 2 * y+15, windowRect.width - 10, windowRect.height / 10), "Level Select",myStyle))
         {
             SceneManager.LoadScene("LevelSelect");
             Time.timeScale = 1;
@@ -56,19 +67,24 @@ public class Exit : MonoBehaviour {
         }
         
         
-        if (GUI.Button(new Rect(5, 4 * y+45, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
+        if (GUI.Button(new Rect(5, 5 * y+60, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
         {
             SceneManager.LoadScene("Menu");
             Time.timeScale = 1;
             menuShow = false;
         }
-        if (GUI.Button(new Rect(5, 5 * y+60, windowRect.width - 10, windowRect.height/10), "Exit Game",myStyle))
+        if (GUI.Button(new Rect(5, 4 * y+45, windowRect.width - 10, windowRect.height/10), "Music "+x,myStyle))
+        {
+            audio = GameObject.FindGameObjectWithTag("Audio");
+            audio.GetComponent<AudioSource>().mute = !audio.GetComponent<AudioSource>().mute;
+        }
+        if (GUI.Button(new Rect(5, 6 * y + 75, windowRect.width - 10, windowRect.height / 10), "Exit Game", myStyle))
         {
             Application.Quit();
             Time.timeScale = 1;
             menuShow = false;
         }
-        
+
 
     }
     // This is the actual window.

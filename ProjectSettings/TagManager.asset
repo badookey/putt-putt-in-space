@@ -10,6 +10,7 @@ TagManager:
   - Planet_Orbit_Ring
   - Portal
   - Deathtext
+  - Audio
   layers:
   - Default
   - TransparentFX
