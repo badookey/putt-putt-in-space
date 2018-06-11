@@ -65,9 +65,15 @@ public class Exit : MonoBehaviour {
 
 
         }
-        
-        
-        if (GUI.Button(new Rect(5, 5 * y+60, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
+        GUI.Label(new Rect(5, 5 * y + 60, windowRect.width - 10, windowRect.height / 10), "Input Sensitivity");
+        GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+        float sensitivty = GUI.HorizontalSlider(new Rect(5, 6 * y + 75, windowRect.width - 10, windowRect.height / 10), PlayerPrefs.GetFloat("sensitivity"), (float)0.1, (float)1.5);
+
+        PlayerPrefs.SetFloat("sensitivity", sensitivty);
+        PlayerPrefs.Save();
+
+
+        if (GUI.Button(new Rect(5, 7 * y+90, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
         {
             SceneManager.LoadScene("Menu");
             Time.timeScale = 1;
@@ -78,7 +84,7 @@ public class Exit : MonoBehaviour {
             audio = GameObject.FindGameObjectWithTag("Audio");
             audio.GetComponent<AudioSource>().mute = !audio.GetComponent<AudioSource>().mute;
         }
-        if (GUI.Button(new Rect(5, 6 * y + 75, windowRect.width - 10, windowRect.height / 10), "Exit Game", myStyle))
+        if (GUI.Button(new Rect(5, 8 * y + 105, windowRect.width - 10, windowRect.height / 10), "Exit Game", myStyle))
         {
             Application.Quit();
             Time.timeScale = 1;

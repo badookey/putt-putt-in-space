@@ -17,6 +17,7 @@ public class AccumulationMovement : MonoBehaviour {
     private Rigidbody2D rb;
     private OrbitMotion om;
     private int _validHits;
+    private float sensitivity;
 
 
 
@@ -36,6 +37,7 @@ public class AccumulationMovement : MonoBehaviour {
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+            sensitivity = PlayerPrefs.GetFloat("sensitivity", (float)1.0);
 
             if (Input.GetKeyDown("y"))
             {
@@ -61,7 +63,7 @@ public class AccumulationMovement : MonoBehaviour {
             else if (Input.GetMouseButtonUp(0))
             {  // finish
                 Vector2 endPos = transform.position;
-                Vector2 newForce = (Vector3)Input.mousePosition - startPos;
+                Vector2 newForce = (Vector3)(Input.mousePosition - startPos)*sensitivity;
 
                 // plan 1
                 //if (newForce.magnitude < threshold) {  // acceptable force
