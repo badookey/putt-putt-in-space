@@ -20,7 +20,7 @@ public class Exit : MonoBehaviour {
     void OnGUI()
     {
         GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
-        windowStyle.fontSize = (int)(30);
+        windowStyle.fontSize = (int)(40);
         if (show)
             windowRect = GUI.Window(0, windowRect, DialogWindow, "You completed "+ SceneManager.GetActiveScene().name,windowStyle);
         if(menuShow)
@@ -33,7 +33,7 @@ public class Exit : MonoBehaviour {
         Time.timeScale = 0;
         float y = (float)(windowRect.height / 10);
         GUIStyle myStyle = new GUIStyle(GUI.skin.button);
-        myStyle.fontSize = (int)(40);
+        myStyle.fontSize = (int)(48);
         GameObject gameObject = GameObject.Find("Player");
         AccumulationMovement movement = gameObject.GetComponent<AccumulationMovement>();
         audio = GameObject.FindGameObjectWithTag("Audio");
@@ -65,15 +65,18 @@ public class Exit : MonoBehaviour {
 
 
         }
-        GUI.Label(new Rect(5, 5 * y + 60, windowRect.width - 10, windowRect.height / 10), "Input Sensitivity");
+        GUI.Label(new Rect(5, 5 * y + 60, windowRect.width - 10, windowRect.height / 10), "Input Sensitivity",myStyle);
         GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-        float sensitivty = GUI.HorizontalSlider(new Rect(5, 6 * y + 75, windowRect.width - 10, windowRect.height / 10), PlayerPrefs.GetFloat("sensitivity"), (float)0.1, (float)1.5);
+        GUIStyle thumbStyle = new GUIStyle(GUI.skin.horizontalSliderThumb);
+        thumbStyle.fixedWidth = y/2;
+        thumbStyle.fixedHeight = windowRect.height / 10;
+        float sensitivty = GUI.HorizontalSlider(new Rect(5, 6 * y + 60, windowRect.width - 10, windowRect.height / 10), PlayerPrefs.GetFloat("sensitivity"), (float)0.1, (float)1.5,myStyle, thumbStyle);
 
         PlayerPrefs.SetFloat("sensitivity", sensitivty);
         PlayerPrefs.Save();
 
 
-        if (GUI.Button(new Rect(5, 7 * y+90, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
+        if (GUI.Button(new Rect(5, 7 * y+75, windowRect.width - 10, windowRect.height / 10), "Main Menu",myStyle))
         {
             SceneManager.LoadScene("Menu");
             Time.timeScale = 1;

@@ -1,0 +1,2 @@
+UI clickthrough - most visible on main menu
+UI transparancy - menus are hard to read due to transparant texture
